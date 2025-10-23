@@ -1,0 +1,242 @@
+.add-recipe-page {
+  margin: 0 auto;
+  font-family: "sofia";
+  font-size: 20px;
+}
+
+.h2 {
+  color: red !important;
+}
+
+.mt-4 {
+  font-size: 70px;
+  font-weight: bold;
+  color: red !important;
+  text-align: center;
+  margin-top: 40px;
+  font-family: "Sofia", cursive;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.filter-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Sofia", cursive;
+}
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  font-family: "Sofia", cursive;
+}
+
+.recipe-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-family: "Sofia", cursive;
+}
+
+.recipe-form input {
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Sofia", cursive;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: "Sofia", cursive;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+.recipe-preview,
+.food-container {
+  margin-top: 40px;
+  font-family: "Sofia", cursive;
+}
+
+.food-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: start;
+  font-family: "Sofia", cursive;
+}
+
+.card {
+  width: 100%;
+  max-width: 260px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Sofia", cursive;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card h2 {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.card li {
+  font-size: 14px;
+  color: #333;
+  margin: 3px 0;
+}
+
+.add-recipes {
+  margin: 0 auto;
+  padding: 200px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+    url("images/ingredients.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+  color: white;
+}
+
+.recipe-section {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.recipes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+.recipe-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  transition: all 0.5s ease;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.recipe-row.reverse {
+  direction: rtl; /* flip layout */
+}
+
+.recipe-row.reverse .recipe-info {
+  direction: ltr;
+}
+
+.recipe-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.recipe-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.recipe-info h2 {
+  color: red;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.recipe-info ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+  column-count: 2;
+  column-gap: 30px;
+}
+
+.recipe-info li {
+  font-size: 16px;
+  color: #333;
+  margin: 4px 0;
+  break-inside: avoid;
+}
+
+.delete-btn {
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .recipe-row {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-info ul {
+    column-count: 1;
+  }
+}

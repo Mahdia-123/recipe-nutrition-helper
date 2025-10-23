@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Sofia&display=swap");
+.meal-of-day {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: red;
+  font-family: "Sofia", cursive;
+}
+
+.meal-of-day h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-family: "Sofia", cursive;
+}
+
+/* Two-column grid layout */
+.meal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  text-align: left;
+}
+
+.meal-image img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Text styles */
+.meal-details h2 {
+  color: red;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-family: "Sofia", cursive;
+}
+
+.prep-info p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #555;
+}
+
+.meal-details h3 {
+  margin-top: 20px;
+  color: #222;
+  font-size: 20px;
+}
+
+.meal-details ul {
+  list-style-type: "🍴 ";
+  padding-left: 20px;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.meal-details li {
+  margin: 4px 0;
+}
+
+/* Fade animation for changing meals */
+.fade-in {
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .meal-grid {
+    grid-template-columns: 1fr;
+  }
+  .meal-details ul {
+    columns: 1;
+  }
+}
