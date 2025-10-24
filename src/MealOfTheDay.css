@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Sofia&display=swap");
 .meal-of-day {
   text-align: center;
-  padding: 50px 20px;
-  background-color: red;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+    url("images/wallpaper3.jpg");
+  padding: 100px 0;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  text-align: center;
+  color: white;
+  font-family: "Sofia", cursive;
   font-family: "Sofia", cursive;
 }
 
@@ -19,9 +28,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -47,23 +56,24 @@
 .prep-info p {
   font-size: 16px;
   margin: 5px 0;
-  color: #555;
+  color: white;
 }
 
 .meal-details h3 {
   margin-top: 20px;
-  color: #222;
-  font-size: 20px;
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .meal-details ul {
   list-style-type: "🍴 ";
   padding-left: 20px;
   margin-top: 10px;
-  font-size: 15px;
-  color: #333;
+  font-size: 20px;
+  color: white;
   columns: 2;
-  column-gap: 20px;
+  column-gap: 30px;
 }
 
 .meal-details li {

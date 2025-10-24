@@ -59,7 +59,7 @@ export default function MealOfTheDay() {
     {
       id: "4",
       title: "Avocado Toast",
-      img: "images/avocado.jpg",
+      img: "images/avocadotost.jpg",
       PreparetionTime: [
         "💼 Prep: 5 mins | 🍴 No cook",
         "🍞 Serves: 1 | 🔥 250 cal/serving",

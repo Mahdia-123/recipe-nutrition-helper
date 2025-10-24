@@ -4,7 +4,7 @@ const popularFood = [
     title: "BLT Chicken Salad",
     img: "images/chicken-salad.jpg",
     PreparetionTime: [
-      "💼 Prep Time: 20 mins | 🍴 Cook Time: 30 mins ",
+      "💼 Prep Time: 20 mins | 🥙 Cook Time: 30 mins ",
       "🍗 Servings: 2 | 🔥 Calories: ~400 per serving",
     ],
     ingredients: [
@@ -22,7 +22,7 @@ const popularFood = [
     title: "Spicy Chicken Wraps",
     img: "images/spicy-chicken-wrap.jpg",
     PreparetionTime: [
-      "💼 Prep Time: 15 mins | 🍴 Cook Time: 30 mins ",
+      "💼 Prep Time: 15 mins | 🌯 Cook Time: 30 mins ",
       "🍗 Servings: 4 | 🔥 Calories: ~350 per serving",
     ],
     ingredients: [
@@ -38,7 +38,7 @@ const popularFood = [
     title: "Crispy French Fries",
     img: "images/french fries.jpg",
     PreparetionTime: [
-      "💼 Prep Time: 15 mins | 🍴 Cook Time: 30 mins ",
+      "💼 Prep Time: 15 mins | 🍟 Cook Time: 30 mins ",
       "🍗 Servings: 2 | 🔥 Calories: ~500 per serving",
     ],
     ingredients: [
@@ -56,7 +56,7 @@ const popularFood = [
     title: "Pizza Burgers",
     img: "images/pizza burger.jpg",
     PreparetionTime: [
-      "💼 Prep Time: 35 mins | 🍴 Cook Time: 30 mins ",
+      "💼 Prep Time: 35 mins | 🍔 Cook Time: 30 mins ",
       "🍗 Servings: 1| 🔥 Calories: ~400 per serving",
     ],
     ingredients: [
@@ -76,7 +76,7 @@ const popularFood = [
     title: "Grilled Salmon",
     img: "images/grilledsalmon.jpg",
     PreparetionTime: [
-      "💼 Prep Time: 10 mins | 🍽️ Cook Time: 15 mins",
+      "💼 Prep Time: 10 mins | 🍱 Cook Time: 15 mins",
       "🐟 Servings: 2 | 🔥 Calories: ~420 per serving",
     ],
     ingredients: [
@@ -91,7 +91,7 @@ const popularFood = [
   {
     id: "6",
     title: "Spaghetti Carbonara",
-    img: "images/carbonara.jpg",
+    img: "images/carabona.jpg",
     PreparetionTime: [
       "💼 Prep Time: 20 mins | 🍝 Cook Time: 15 mins",
       "🍽️ Servings: 3 | 🔥 Calories: ~500 per serving",

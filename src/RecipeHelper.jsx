@@ -2,14 +2,31 @@ import React, { useState } from "react";
 import "./RecipeHelper.css";
 import MealOfTheDay from "./MealOfTheDay";
 import Nav from "./navbar/Nav";
-import popularFood from "./components/popularfoods";
+import popularFoodData from "./components/popularfoods";
 import { Link } from "react-router-dom";
 
 export default function RecipeHelper() {
   const [openCard, setOpenCard] = useState(null);
+  const [popularFood, setPopularFood] = useState(
+    popularFoodData.map((food) => ({ ...food, liked: false, rating: 0 }))
+  );
 
   const toggleCard = (id) => {
     setOpenCard(openCard === id ? null : id);
+  };
+
+  const handleLike = (id) => {
+    const updatedFood = popularFood.map((food) =>
+      food.id === id ? { ...food, liked: !food.liked } : food
+    );
+    setPopularFood(updatedFood);
+  };
+
+  const handleRating = (id, rating) => {
+    const updatedFood = popularFood.map((food) =>
+      food.id === id ? { ...food, rating } : food
+    );
+    setPopularFood(updatedFood);
   };
 
   return (
@@ -22,7 +39,24 @@ export default function RecipeHelper() {
           Add Recipe
         </Link>
       </header>
-
+      <section className="about-nutrition mt-5 fluid">
+        <h1 className="nutritionHead">About Our Website</h1>
+        <div className="aboutNutrition">
+          {" "}
+          <p>
+            The Recipe & Nutrition Helper is your go-to web app for discovering
+            delicious meals and tracking essential nutritional information.
+            Featuring a “Meal of the Day,” popular recipes, and an interactive
+            recipe gallery, users can explore, like, and rate their favorite
+            dishes. With AI-powered meal suggestions tailored to your
+            goals—whether to gain weight, lose weight, or maintain a healthy
+            diet—you can get personalized guidance alongside preparation times,
+            ingredient lists, and an option to add new recipes. This platform
+            helps you fuel your body, make smarter food choices, and enjoy the
+            joy of cooking.
+          </p>
+        </div>
+      </section>
       <section className="popular-foods">
         <h1 className="mt-5">Popular Foods</h1>
         <div className="popular-foods-container">
@@ -58,6 +92,32 @@ export default function RecipeHelper() {
                       </ul>
                     </div>
                   )}
+
+                  {/* Interaction Buttons */}
+                  <div className="interaction-buttons">
+                    {/* Like Button */}
+                    <button
+                      className={`like-btn ${food.liked ? "liked" : ""}`}
+                      onClick={() => handleLike(food.id)}
+                    >
+                      {food.liked ? "Liked ❤️" : "Like ❤️"}
+                    </button>
+
+                    {/* Star Rating */}
+                    <div className="star-rating">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span
+                          key={star}
+                          className={
+                            food.rating >= star ? "filled-star" : "empty-star"
+                          }
+                          onClick={() => handleRating(food.id, star)}
+                        >
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
