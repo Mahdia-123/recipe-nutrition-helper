@@ -11,7 +11,7 @@ export default function NutritionSuggestion() {
 
   const client = new OpenAI({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true, // for demo — move to backend for production
+    dangerouslyAllowBrowser: true, // ⚠️ For demo only
   });
 
   const getSuggestion = async () => {
@@ -55,69 +55,88 @@ Suggest a one-day healthy meal plan in JSON format.
   };
 
   return (
-    <div className="body">
+    <div>
+      {" "}
       <Nav />
-      <div className="nutrition-suggestion">
-        <h2>AI Nutrition Coach 🥗</h2>
-        <p>Select your goal and get a personalized day meal plan.</p>
+      <div className="nutrition-page">
+        {" "}
+        <div className="nutrition-container-dark">
+          <div className="nutrition-card-dark glass-dark">
+            <h2 className="title-dark">AI Nutrition Coach 🥗</h2>
+            <p className="subtitle-dark">
+              Choose your goal and get a personalized daily meal plan.
+            </p>
 
-        <div className="goal-buttons">
-          {["Lose Weight", "Gain Weight", "Maintain Health"].map((g) => (
+            <div className="goal-buttons-dark">
+              {["Lose Weight", "Gain Weight", "Maintain Health"].map((g) => (
+                <button
+                  key={g}
+                  className={`goal-btn-dark ${goal === g ? "active" : ""}`}
+                  onClick={() => setGoal(g)}
+                >
+                  {g}
+                </button>
+              ))}
+            </div>
+
+            <textarea
+              className="preferences-dark"
+              placeholder="Optional: e.g., vegetarian, gluten-free, no dairy..."
+              value={preferences}
+              onChange={(e) => setPreferences(e.target.value)}
+            />
+
             <button
-              key={g}
-              className={goal === g ? "active" : ""}
-              onClick={() => setGoal(g)}
+              className="generate-btn-dark"
+              onClick={getSuggestion}
+              disabled={loading}
             >
-              {g}
+              {loading ? "Generating..." : "⚡ Get My Meal Plan"}
             </button>
-          ))}
-        </div>
+          </div>
 
-        <textarea
-          placeholder="Optional: Mention preferences (e.g., vegetarian, no dairy)..."
-          value={preferences}
-          onChange={(e) => setPreferences(e.target.value)}
-        />
+          {meals && (
+            <div className="meal-plan-dark">
+              {["breakfast", "snacks", "lunch", "dinner"].map((mealType) =>
+                meals[mealType] ? (
+                  <div className="meal-section-dark glass-dark" key={mealType}>
+                    <h3>
+                      {mealType.charAt(0).toUpperCase() + mealType.slice(1)} 🍴
+                    </h3>
+                    <div className="meal-card-dark">
+                      <p>
+                        <strong>Description:</strong>{" "}
+                        {meals[mealType].description}
+                      </p>
+                      <p>
+                        <strong>Calories:</strong> {meals[mealType].calories}
+                      </p>
 
-        <button onClick={getSuggestion} disabled={loading}>
-          {loading ? "Generating..." : "Get My Meal Plan"}
-        </button>
-      </div>
-      {meals && (
-        <div className="meal-plan">
-          {["breakfast", "snacks", "lunch", "dinner"].map((mealType) =>
-            meals[mealType] ? (
-              <div className="meal-section" key={mealType}>
-                <h3>{mealType.charAt(0).toUpperCase() + mealType.slice(1)}</h3>
-                <div className="meal-card">
-                  <p>
-                    <strong>Description:</strong> {meals[mealType].description}
-                  </p>
-                  <p>
-                    <strong>Calories:</strong> {meals[mealType].calories}
-                  </p>
-
-                  {meals[mealType].recipe && (
-                    <>
-                      <h4>Recipe:</h4>
-                      <ul>
-                        {meals[mealType].recipe.ingredients?.map((i, idx) => (
-                          <li key={idx}>{i}</li>
-                        ))}
-                      </ul>
-                      <ol>
-                        {meals[mealType].recipe.steps?.map((s, idx) => (
-                          <li key={idx}>{s}</li>
-                        ))}
-                      </ol>
-                    </>
-                  )}
-                </div>
-              </div>
-            ) : null
+                      {meals[mealType].recipe && (
+                        <>
+                          <h4>Recipe</h4>
+                          <ul>
+                            {meals[mealType].recipe.ingredients?.map(
+                              (i, idx) => (
+                                <li key={idx}>{i}</li>
+                              )
+                            )}
+                          </ul>
+                          <ol>
+                            {meals[mealType].recipe.steps?.map((s, idx) => (
+                              <li key={idx}>{s}</li>
+                            ))}
+                          </ol>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ) : null
+              )}
+            </div>
           )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

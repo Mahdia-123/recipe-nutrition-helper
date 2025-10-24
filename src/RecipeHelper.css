@@ -122,20 +122,20 @@ header p {
   border: 1px solid white;
 }
 .toggle-btn {
-  background: none;
+  background: none !important;
   border: none;
-  color: red;
+  color: red !important;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: bold !important;
   cursor: pointer;
   margin-top: 10px;
   transition: color 0.3s ease;
 }
 
 .toggle-btn:hover {
-  color: red;
-  background: none;
-  border: 1px solid red;
+  color: red !important;
+  background: none !important;
+  border: 1px solid red !important;
 }
 
 .details {
@@ -147,13 +147,14 @@ header p {
   animation: fadeIn 0.3s ease-in-out;
 }
 .like-btn {
-  background: none;
+  background: none !important;
   border: none !important;
   cursor: pointer;
   font-size: 1rem;
   display: inline-flex; /* keeps text and emoji inline */
   align-items: center; /* vertically aligns them */
   gap: 5px; /* optional spacing */
+  color: red !important;
 }
 
 .like-btn.liked {
@@ -201,5 +202,12 @@ p {
   }
   .about-container {
     grid-template-columns: 1fr;
+  }
+  .aboutNutrition {
+    display: block;
+    margin: 0 auto;
+  }
+  .nutritionHead {
+    text-align: center;
   }
 }

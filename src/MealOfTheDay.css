@@ -2,9 +2,9 @@
 .meal-of-day {
   text-align: center;
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
     url("images/wallpaper3.jpg");
-  padding: 100px 0;
+  padding: 50px 0;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,7 +39,7 @@
 }
 
 .meal-image img {
-  width: 500px;
+  width: 600px;
   height: 500px;
   object-fit: cover;
   border-radius: 10px;

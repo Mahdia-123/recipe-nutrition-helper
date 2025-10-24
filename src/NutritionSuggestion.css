@@ -1,121 +1,201 @@
-.nutrition-suggestion {
-  max-width: 960px;
-  margin: 60px auto;
-  padding: 30px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  font-family: "Sofia", cursive;
-}
-
-.nutrition-suggestion h2 {
-  color: red;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.goal-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.goal-buttons button {
-  border: 1px solid red;
-  border-radius: 8px;
-  padding: 10px 18px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-weight: bold;
-  color: red;
-  background-color: white !important;
-}
-
-.goal-buttons button.active {
-  color: red;
-}
-
-textarea {
+/* === PAGE BACKGROUND === */
+/* === PAGE BACKGROUND === */
+.nutrition-page {
+  background: radial-gradient(circle at top left, #1a1a1a 0%, #0d0d0d 100%);
+  min-height: 100vh;
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  resize: none;
-  margin-bottom: 20px;
-}
-
-button {
-  border: 1px solid red !important;
-  color: red !important;
-  font-weight: bold;
-  border-radius: 8px !important;
-  padding: 10px 25px;
-  cursor: pointer;
-  font-weight: bold !important;
-  transition: background 0.3s;
-  background-color: white !important;
-  margin-top: 10px !important;
-}
-
-button:hover {
-  color: red;
-}
-
-.meal-plan {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  align-items: center; /* center children horizontally */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* === CONTAINER === */
+.nutrition-container-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ ensures child cards are centered */
+  width: 100%;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+}
+
+/* === MAIN CARD === */
+.nutrition-card-dark {
+  max-width: 960px; /* ✅ limit card width */
+  width: 100%; /* responsive */
+  margin: 2rem auto; /* center horizontally */
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* ensure padding doesn’t overflow */
+}
+
+/* === GLASS EFFECT === */
+.glass-dark {
+  background: rgba(25, 25, 25, 0.6);
+  border: 1px solid rgba(80, 255, 180, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(80, 255, 180, 0.1);
+}
+
+/* === MEAL SECTIONS === */
+.meal-section-dark {
+  width: 100%;
+  max-width: 960px; /* ✅ limit meal section width */
+  padding: 1.8rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.meal-section-dark:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(80, 255, 180, 0.15);
+}
+
+.nutrition-card-dark:hover {
+  box-shadow: 0 0 40px rgba(80, 255, 180, 0.25);
+  transform: translateY(-5px);
+}
+
+/* === TITLES === */
+.title-dark {
+  font-size: 2rem;
+  color: #80ffb4;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle-dark {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === GOAL BUTTONS === */
+.goal-buttons-dark {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.goal-btn-dark {
+  background: linear-gradient(145deg, #1f1f1f, #121212);
+  color: #80ffb4;
+  border: 1px solid rgba(80, 255, 180, 0.4);
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.goal-btn-dark:hover {
+  background: rgba(80, 255, 180, 0.2);
+  color: white;
+  box-shadow: 0 0 10px rgba(80, 255, 180, 0.5);
+}
+
+.goal-btn-dark.active {
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #000;
+}
+
+/* === TEXTAREA === */
+.preferences-dark {
+  width: 100%;
+  background: rgba(30, 30, 30, 0.7);
+  color: #f5f5f5;
+  border: 1px solid rgba(80, 255, 180, 0.3);
+  border-radius: 15px;
+  padding: 1rem;
+  resize: none;
+  min-height: 100px;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.preferences-dark:focus {
+  border-color: #80ffb4;
+}
+
+/* === MAIN BUTTON === */
+.generate-btn-dark {
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #0d0d0d;
+  font-weight: 700;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-btn-dark:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
+}
+
+/* === MEAL PLAN GRID === */
+/* === MEAL PLAN (vertical stacked layout) === */
+.meal-plan-dark {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* ✅ Stack vertically */
+  align-items: center; /* ✅ Center horizontally */
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* === INDIVIDUAL MEAL SECTIONS === */
+.meal-section-dark {
+  width: 100%;
   max-width: 960px;
-  margin: 0 auto;
-  font-family: "Sofia", cursive;
+  padding: 1.8rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
-.meal-section {
-  background: #fafafa;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.meal-section-dark:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(80, 255, 180, 0.15);
+}
+
+/* Optional: enhance readability */
+.meal-section-dark h3 {
+  color: red;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(80, 255, 180, 0.2);
+  padding-bottom: 0.3rem;
+}
+
+/* === MEAL CARDS === */
+.meal-card-dark {
   text-align: left;
-}
-
-.meal-section h3 {
-  color: red;
-  text-transform: capitalize;
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.meal-card {
-  padding: 10px 15px;
-}
-
-.meal-card h4 {
-  margin-top: 10px;
-  font-size: 22px;
-  color: red;
-}
-
-.meal-card ul,
-.meal-card ol {
-  margin-left: 20px;
-  margin-top: 5px;
+  color: #d1ffd8;
   line-height: 1.6;
 }
 
-.meal-card li {
-  font-size: 16px;
-  color: #333;
+.meal-card-dark h4 {
+  color: red;
+  margin-top: 0.8rem;
 }
 
-@media (max-width: 600px) {
-  .nutrition-suggestion {
-    padding: 20px;
-  }
-  .meal-card {
-    padding: 5px;
-  }
+.meal-card-dark ul,
+.meal-card-dark ol {
+  padding-left: 1.3rem;
+}
+
+.meal-card-dark strong {
+  color: #00e676;
 }

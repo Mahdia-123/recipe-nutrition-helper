@@ -86,7 +86,7 @@ export default function MealOfTheDay() {
 
       <div className="meal-grid fade-in">
         <div className="meal-image">
-          <img src={meal.img} alt={meal.title} />
+          <img className="img-fluid" src={meal.img} alt={meal.title} />
         </div>
 
         <div className="meal-details">
