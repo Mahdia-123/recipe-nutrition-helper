@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./MealOfTheDay.css";
+import wallpaper3 from "/images/wallpaper3.jpg"; // ✅ Background image from /public/images
 
 export default function MealOfTheDay() {
+  // ✅ Use absolute paths (from /public) for images
   const meals = [
     {
       id: "1",
       title: "Chicken Biryani",
-      img: "images/biryani1.jpg",
+      img: "/images/biryani1.jpg",
       PreparetionTime: [
         "💼 Prep: 30 mins | 🍴 Cook: 1h",
         "🍗 Serves: 8 | 🔥 400 cal/serving",
@@ -25,7 +27,7 @@ export default function MealOfTheDay() {
     {
       id: "2",
       title: "Greek Salad",
-      img: "images/greeksalad.jpg",
+      img: "/images/greeksalad.jpg",
       PreparetionTime: [
         "💼 Prep: 10 mins | 🍴 No cook",
         "🥗 Serves: 2 | 🔥 150 cal/serving",
@@ -42,7 +44,7 @@ export default function MealOfTheDay() {
     {
       id: "3",
       title: "Pasta Alfredo",
-      img: "images/pasta.jpg",
+      img: "/images/pasta.jpg",
       PreparetionTime: [
         "💼 Prep: 15 mins | 🍴 Cook: 20 mins",
         "🍝 Serves: 3 | 🔥 500 cal/serving",
@@ -59,7 +61,7 @@ export default function MealOfTheDay() {
     {
       id: "4",
       title: "Avocado Toast",
-      img: "images/avocadotost.jpg",
+      img: "/images/avocadotost.jpg",
       PreparetionTime: [
         "💼 Prep: 5 mins | 🍴 No cook",
         "🍞 Serves: 1 | 🔥 250 cal/serving",
@@ -81,7 +83,15 @@ export default function MealOfTheDay() {
   const meal = meals[index];
 
   return (
-    <section className="meal-of-day mt-5">
+    <section
+      className="meal-of-day mt-5"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.6)), url(${wallpaper3})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <h1>🍽️ Recipe of the Day</h1>
 
       <div className="meal-grid fade-in">

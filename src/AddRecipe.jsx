@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./AddRecipe.css";
 import Nav from "./navbar/Nav";
+import ingredientsBg from "/images/ingredients.webp"; // ✅ Import from /public/images
 
 export default function AddRecipe() {
   const [recipes, setRecipes] = useState([]);
@@ -79,101 +80,109 @@ export default function AddRecipe() {
   return (
     <div className="add-recipe-page">
       <Nav />
-      <div className="ingredients-container">
-        {/* Add Recipe Form */}
-        <div className="add-recipes">
-          <div className="recipe-section">
-            <h2 className="h2">Add a New Recipe</h2>
 
-            <input
-              type="text"
-              placeholder="Search recipes by name or ingredient..."
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-              className="filter-input"
-            />
+      {/* ✅ Inline background applied directly here */}
+      <div
+        className="add-recipes"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${ingredientsBg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "white",
+        }}
+      >
+        <div className="recipe-section">
+          <h2 className="h2">Add a New Recipe</h2>
 
-            <form onSubmit={handleSubmit} className="recipe-form">
-              <label>
-                Recipe Title:
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  required
-                />
-              </label>
+          <input
+            type="text"
+            placeholder="Search recipes by name or ingredient..."
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="filter-input"
+          />
 
-              <label>
-                Recipe Image:
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  required
-                />
-              </label>
+          <form onSubmit={handleSubmit} className="recipe-form">
+            <label>
+              Recipe Title:
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+            </label>
 
-              <label>
-                Ingredients (comma separated):
-                <input
-                  type="text"
-                  value={ingredients}
-                  onChange={(e) => setIngredients(e.target.value)}
-                  placeholder="chicken, lettuce, tomato"
-                  required
-                />
-              </label>
+            <label>
+              Recipe Image:
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                required
+              />
+            </label>
 
-              <button type="submit">Add Recipe</button>
-            </form>
+            <label>
+              Ingredients (comma separated):
+              <input
+                type="text"
+                value={ingredients}
+                onChange={(e) => setIngredients(e.target.value)}
+                placeholder="chicken, lettuce, tomato"
+                required
+              />
+            </label>
+
+            <button type="submit">Add Recipe</button>
+          </form>
+        </div>
+      </div>
+
+      {preview && (
+        <div className="recipe-preview">
+          <h3>Preview</h3>
+          <div className="card">
+            <img src={preview} alt={title} />
+            <h2>{title}</h2>
+            <ul>
+              {ingredients.split(",").map((item, i) => (
+                <li key={i}>{item.trim()}</li>
+              ))}
+            </ul>
           </div>
         </div>
+      )}
 
-        {preview && (
-          <div className="recipe-preview">
-            <h3>Preview</h3>
-            <div className="card">
-              <img src={preview} alt={title} />
-              <h2>{title}</h2>
+      <h3 className="mt-4">Recipes</h3>
+
+      <div className="recipes-list">
+        {filteredRecipes.map((recipe, index) => (
+          <div
+            className={`recipe-row ${index % 2 !== 0 ? "reverse" : ""}`}
+            key={recipe.id}
+          >
+            <div className="recipe-image">
+              <img src={recipe.img} alt={recipe.title} />
+            </div>
+
+            <div className="recipe-info">
+              <h2>{recipe.title}</h2>
               <ul>
-                {ingredients.split(",").map((item, i) => (
-                  <li key={i}>{item.trim()}</li>
+                {recipe.ingredients.map((i, idx) => (
+                  <li key={idx}>{i}</li>
                 ))}
               </ul>
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(recipe.id)}
+              >
+                Delete
+              </button>
             </div>
           </div>
-        )}
-
-        <h3 className="mt-4">Recipes</h3>
-
-        <div className="recipes-list">
-          {filteredRecipes.map((recipe, index) => (
-            <div
-              className={`recipe-row ${index % 2 !== 0 ? "reverse" : ""}`}
-              key={recipe.id}
-            >
-              <div className="recipe-image">
-                <img src={recipe.img} alt={recipe.title} />
-              </div>
-
-              <div className="recipe-info">
-                <h2>{recipe.title}</h2>
-                <ul>
-                  {recipe.ingredients.map((i, idx) => (
-                    <li key={idx}>{i}</li>
-                  ))}
-                </ul>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(recipe.id)}
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   );
