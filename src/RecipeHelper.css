@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Sofia&display=swap");
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
-    url("images/fastfood2.jpg");
+    url("/images/fastfood2.jpg");
   padding: 250px 0;
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@ header {
   font-family: "Sofia", cursive;
 }
 .about-nutrition {
-  background-image: url("images/wallpaper6.jpg");
+  background-image: url("/images/wallpaper6.jpg");
   padding: 100px 0;
   margin: 0 auto;
   background-repeat: no-repeat;
