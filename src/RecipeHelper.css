@@ -73,7 +73,7 @@ header p {
 .card {
   width: 100%;
   max-width: 260px;
-  border: 1px solid #80ffb4;
+  border: 1px solid;
   border-radius: 10px;
   background: rgba(25, 25, 25, 0.6) !important;
   box-shadow: 0 0 30px rgba(80, 255, 180, 0.2) !important;
@@ -90,7 +90,8 @@ header p {
 .card-body {
   padding: 10px;
 }
-
+.card-body:focus {
+}
 .card-body h2 {
   font-size: 18px;
   margin-bottom: 10px;
@@ -159,9 +160,9 @@ header p {
   border: none !important;
   cursor: pointer;
   font-size: 1rem;
-  display: inline-flex; /* keeps text and emoji inline */
-  align-items: center; /* vertically aligns them */
-  gap: 5px; /* optional spacing */
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: red !important;
 }
 .like-btn:hover {
@@ -194,7 +195,6 @@ header p {
   gap: 10px;
 }
 
-/* Optional fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -208,20 +208,43 @@ header p {
 p {
   font-size: 14px;
 }
+
 @media (max-width: 960px) {
+  .popular-foods-container {
+    padding: 0 10px !important;
+    width: 100% !important;
+  }
+
   .grid-4-columns {
     grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    justify-items: center !important;
   }
-  .about-container {
-    grid-template-columns: 1fr;
+
+  .card {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
+
+  .card img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .popular-foods h1 {
+    font-size: 36px !important;
+  }
+
   .aboutNutrition {
-    display: block;
-    margin: 0 auto;
+    margin: 0 auto !important;
+    font-size: 20px !important;
+    text-align: center !important;
   }
-  .mt-5 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 40px !important;
+
+  .nutritionHead {
+    text-align: center !important;
+    margin-left: 0 !important;
+    bottom: 20px !important;
   }
 }
