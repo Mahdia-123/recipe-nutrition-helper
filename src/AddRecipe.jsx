@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./AddRecipe.css";
 import Nav from "./navbar/Nav";
-import ingredientsBg from "/images/ingredients.webp"; // ✅ Import from /public/images
+import ingredientsBg from "/images/ingredients.webp";
 
 export default function AddRecipe() {
   const [recipes, setRecipes] = useState([]);
@@ -81,7 +81,6 @@ export default function AddRecipe() {
     <div className="add-recipe-page">
       <Nav />
 
-      {/* ✅ Inline background applied directly here */}
       <div
         className="add-recipes"
         style={{

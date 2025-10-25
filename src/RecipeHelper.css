@@ -90,8 +90,7 @@ header p {
 .card-body {
   padding: 10px;
 }
-.card-body:focus {
-}
+
 .card-body h2 {
   font-size: 18px;
   margin-bottom: 10px;

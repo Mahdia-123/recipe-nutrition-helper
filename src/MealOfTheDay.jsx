@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./MealOfTheDay.css";
-import wallpaper3 from "/images/wallpaper3.jpg"; // ✅ Background image from /public/images
+import wallpaper3 from "/images/wallpaper3.jpg";
 
 export default function MealOfTheDay() {
-  // ✅ Use absolute paths (from /public) for images
   const meals = [
     {
       id: "1",

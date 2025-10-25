@@ -6,7 +6,6 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-top">
-        {/* Brand / Motto */}
         <div className="footer-brand">
           <h2>🍴 Recipe & Nutrition Helper</h2>
           <p>Eat Smart. Live Better. Cook with AI.</p>
