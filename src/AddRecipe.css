@@ -93,7 +93,6 @@ button:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: "Sofia", cursive;
 }
 
 .card:hover {
@@ -203,6 +202,7 @@ button:hover {
   color: #80ffb4;
   margin: 4px 0;
   break-inside: avoid;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 .delete-btn {

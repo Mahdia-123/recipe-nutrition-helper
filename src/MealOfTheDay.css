@@ -54,6 +54,7 @@
   font-size: 16px;
   margin: 5px 0;
   color: #80ffb4;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 .meal-details h3 {
@@ -71,6 +72,7 @@
   color: #80ffb4;
   columns: 2;
   column-gap: 30px;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 .meal-details li {

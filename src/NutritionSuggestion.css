@@ -148,6 +148,7 @@
   padding: 1.8rem;
   border-radius: 20px;
   transition: all 0.3s ease;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 .meal-section-dark:hover {
@@ -161,6 +162,7 @@
   font-size: 1.3rem;
   border-bottom: 1px solid rgba(80, 255, 180, 0.2);
   padding-bottom: 0.3rem;
+  font-family: "Sofia", cursive;
 }
 
 .meal-card-dark {
@@ -172,6 +174,7 @@
 .meal-card-dark h4 {
   color: red;
   margin-top: 0.8rem;
+  font-family: "Sofia", cursive;
 }
 
 .meal-card-dark ul,
