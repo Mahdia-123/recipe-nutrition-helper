@@ -129,7 +129,7 @@ button:hover {
 
 .add-recipes {
   margin: 0 auto;
-  padding: 200px 0;
+  padding: 100px 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
     url("images/ingredients.webp");
   background-repeat: no-repeat;
