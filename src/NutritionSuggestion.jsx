@@ -11,7 +11,7 @@ export default function NutritionSuggestion() {
 
   const client = new OpenAI({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true, // ⚠️ For demo only
+    dangerouslyAllowBrowser: true,
   });
 
   const getSuggestion = async () => {

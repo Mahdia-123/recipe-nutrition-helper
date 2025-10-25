@@ -42,19 +42,17 @@ body,
 }
 
 .navbar-nav .nav-link:hover {
-  color: rgb(94, 93, 93) !important;
+  color: #80ffb4 !important;
 }
 
-/* Navbar toggler (hamburger) */
 .navbar-toggler {
   border: none;
 }
 
-/* === FIXED MOBILE DROPDOWN === */
 @media (max-width: 960px) {
   .navbar-nav {
-    background-color: #000; /* black background for dropdown */
-    border-radius: 0 0 8px 8px; /* optional rounded corners */
+    background-color: #000;
+    border-radius: 0 0 8px 8px;
     width: 100%;
   }
 
@@ -62,11 +60,11 @@ body,
     line-height: normal;
     margin-left: 0;
     padding: 10px 15px;
-    color: red !important; /* white links */
+    color: red !important;
   }
 
   .navbar-nav .nav-link:hover {
-    background-color: #111; /* slightly lighter black on hover */
+    background-color: #111;
     border-radius: 5px;
   }
 

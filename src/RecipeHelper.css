@@ -39,6 +39,7 @@ header {
   bottom: 60px;
   margin-left: 30px;
   font-weight: bold;
+  text-shadow: 0 0 30px rgba(80, 255, 180, 0.4);
 }
 header h1 {
   font-size: 50px;
@@ -48,6 +49,7 @@ header h1 {
 header p {
   font-size: 30px;
   letter-spacing: 2px;
+  color: #80ffb4;
 }
 .popular-foods-container {
   width: 100%;
@@ -56,7 +58,9 @@ header p {
   padding: 10px 40px;
   display: block;
 }
-
+.popular-foods-container p {
+  color: #80ffb4;
+}
 .grid-4-columns {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
@@ -69,10 +73,10 @@ header p {
 .card {
   width: 100%;
   max-width: 260px;
-  border: 1px solid #ddd;
+  border: 1px solid #80ffb4;
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(25, 25, 25, 0.6) !important;
+  box-shadow: 0 0 30px rgba(80, 255, 180, 0.2) !important;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -97,8 +101,11 @@ header p {
   list-style: none;
   padding: 0;
   font-size: 14px;
+  color: #80ffb4 !important;
 }
-
+.card-body li {
+  color: #80ffb4 !important;
+}
 .popular-foods h1 {
   color: red;
   font-size: 50px;
@@ -106,6 +113,7 @@ header p {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-family: "Sofia", cursive;
+  text-shadow: 0 0 30px rgba(80, 255, 180, 0.4);
 }
 .add-recipe-link {
   color: white;
@@ -143,7 +151,7 @@ header p {
   padding: 8px;
   border-top: 1px solid #eee;
   font-size: 14px;
-  color: #333;
+  color: #80ffb4;
   animation: fadeIn 0.3s ease-in-out;
 }
 .like-btn {
@@ -156,7 +164,11 @@ header p {
   gap: 5px; /* optional spacing */
   color: red !important;
 }
-
+.like-btn:hover {
+  border: 1px solid #80ffb4 !important;
+  border-radius: 12px !important;
+  background-color: rgba(25, 25, 25, 0.6) !important;
+}
 .like-btn.liked {
   color: red;
   font-weight: bold;
@@ -168,7 +180,7 @@ header p {
 }
 
 .filled-star {
-  color: gold;
+  color: #80ffb4 !important;
 }
 
 .empty-star {
@@ -207,7 +219,9 @@ p {
     display: block;
     margin: 0 auto;
   }
-  .nutritionHead {
+  .mt-5 {
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px !important;
   }
 }

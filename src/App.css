@@ -2,4 +2,5 @@
 
 body {
   font-family: "Sofia", cursive;
+  background: radial-gradient(circle at top left, #1a1a1a 0%, #0d0d0d 100%);
 }

@@ -16,14 +16,13 @@
 }
 
 .meal-of-day h1 {
-  color: white;
+  color: #80ffb4;
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 40px;
   font-family: "Sofia", cursive;
 }
 
-/* Two-column grid layout */
 .meal-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -45,7 +44,6 @@
   border-radius: 10px;
 }
 
-/* Text styles */
 .meal-details h2 {
   color: red;
   font-size: 28px;
@@ -80,7 +78,6 @@
   margin: 4px 0;
 }
 
-/* Fade animation for changing meals */
 .fade-in {
   animation: fade 1s ease-in-out;
 }
@@ -99,7 +96,6 @@
   }
 }
 
-/* Responsive layout */
 @media (max-width: 900px) {
   .meal-grid {
     grid-template-columns: 1fr;

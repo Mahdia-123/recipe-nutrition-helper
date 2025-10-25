@@ -10,13 +10,11 @@ export default function AddRecipe() {
   const [ingredients, setIngredients] = useState("");
   const [filter, setFilter] = useState("");
 
-  // 🧩 Load recipes from localStorage on mount
   useEffect(() => {
     const savedRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
     setRecipes(savedRecipes);
   }, []);
 
-  // 💾 Save to localStorage whenever recipes change
   useEffect(() => {
     if (recipes.length > 0) {
       localStorage.setItem("recipes", JSON.stringify(recipes));
@@ -29,10 +27,9 @@ export default function AddRecipe() {
 
     setImage(file);
 
-    // Convert image to base64 for permanent storage
     const reader = new FileReader();
     reader.onloadend = () => {
-      setPreview(reader.result); // base64 preview
+      setPreview(reader.result);
     };
     reader.readAsDataURL(file);
   };
@@ -48,7 +45,7 @@ export default function AddRecipe() {
     const newRecipe = {
       id: Date.now(),
       title,
-      img: preview, // base64 image
+      img: preview,
       ingredients: ingredients.split(",").map((i) => i.trim()),
     };
 
@@ -133,7 +130,6 @@ export default function AddRecipe() {
           </div>
         </div>
 
-        {/* Live Preview */}
         {preview && (
           <div className="recipe-preview">
             <h3>Preview</h3>

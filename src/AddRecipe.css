@@ -15,7 +15,7 @@
   text-align: center;
   margin-top: 40px;
   font-family: "Sofia", cursive;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 30px rgba(80, 255, 180, 0.4);
 }
 
 .filter-input {
@@ -156,9 +156,9 @@ button:hover {
   grid-template-columns: 1fr 1fr;
   gap: 25px;
   align-items: center;
-  background: #fff;
+  background: rgba(25, 25, 25, 0.6);
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0 30px rgba(80, 255, 180, 0.2);
   overflow: hidden;
   transition: all 0.5s ease;
   animation: fadeIn 0.8s ease-in-out;
@@ -200,15 +200,15 @@ button:hover {
 
 .recipe-info li {
   font-size: 16px;
-  color: #333;
+  color: #80ffb4;
   margin: 4px 0;
   break-inside: avoid;
 }
 
 .delete-btn {
-  background-color: transparent;
-  color: red;
-  border: 1px solid red;
+  background-color: rgba(25, 25, 25, 0.6) !important;
+  color: white;
+  border: 1px solid #80ffb4;
   padding: 8px 14px;
   border-radius: 5px;
   cursor: pointer;
@@ -217,8 +217,8 @@ button:hover {
 }
 
 .delete-btn:hover {
-  background-color: red;
-  color: white;
+  background-color: white;
+  color: red;
 }
 
 @keyframes fadeIn {

@@ -8,12 +8,10 @@ export default function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark ">
       <div className="container">
-        {/* Logo */}
         <Link className="navbar-brand" to="/">
           <img src="/images/beefburgur.jpg" alt="Logo" />
         </Link>
 
-        {/* Toggler */}
         <button
           className="navbar-toggler"
           type="button"

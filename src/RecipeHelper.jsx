@@ -4,6 +4,7 @@ import MealOfTheDay from "./MealOfTheDay";
 import Nav from "./navbar/Nav";
 import popularFoodData from "./components/popularfoods";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function RecipeHelper() {
   const [openCard, setOpenCard] = useState(null);
@@ -70,7 +71,6 @@ export default function RecipeHelper() {
                   </h2>
                   <p>{food.PreparetionTime}</p>
 
-                  {/* Toggle Button */}
                   <button
                     className="toggle-btn"
                     onClick={() => toggleCard(food.id)}
@@ -78,7 +78,6 @@ export default function RecipeHelper() {
                     {openCard === food.id ? "▲ Hide Details" : "▼ Show Details"}
                   </button>
 
-                  {/* Hidden / Shown Content */}
                   {openCard === food.id && (
                     <div className="details">
                       <ul>
@@ -93,7 +92,6 @@ export default function RecipeHelper() {
                     </div>
                   )}
 
-                  {/* Interaction Buttons */}
                   <div className="interaction-buttons">
                     {/* Like Button */}
                     <button
@@ -103,7 +101,6 @@ export default function RecipeHelper() {
                       {food.liked ? "Liked ❤️" : "Like ❤️"}
                     </button>
 
-                    {/* Star Rating */}
                     <div className="star-rating">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <span
@@ -127,6 +124,9 @@ export default function RecipeHelper() {
 
       <section>
         <MealOfTheDay />
+      </section>
+      <section className="footer">
+        <Footer />
       </section>
     </div>
   );

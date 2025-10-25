@@ -1,52 +1,46 @@
-/* === PAGE BACKGROUND === */
-/* === PAGE BACKGROUND === */
 .nutrition-page {
   background: radial-gradient(circle at top left, #1a1a1a 0%, #0d0d0d 100%);
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* center children horizontally */
+  align-items: center;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-/* === CONTAINER === */
 .nutrition-container-dark {
   display: flex;
   flex-direction: column;
-  align-items: center; /* ✅ ensures child cards are centered */
+  align-items: center;
   width: 100%;
   padding: 3rem 1rem;
   box-sizing: border-box;
 }
 
-/* === MAIN CARD === */
 .nutrition-card-dark {
-  max-width: 960px; /* ✅ limit card width */
-  width: 100%; /* responsive */
-  margin: 2rem auto; /* center horizontally */
+  max-width: 960px;
+  width: 100%;
+  margin: 2rem auto;
   padding: 2.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  box-sizing: border-box; /* ensure padding doesn’t overflow */
+  box-sizing: border-box;
 }
 
-/* === GLASS EFFECT === */
 .glass-dark {
   background: rgba(25, 25, 25, 0.6);
   border: 1px solid rgba(80, 255, 180, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(80, 255, 180, 0.1);
+  box-shadow: 0 0 30px rgba(80, 255, 180, 0.2);
 }
 
-/* === MEAL SECTIONS === */
 .meal-section-dark {
   width: 100%;
-  max-width: 960px; /* ✅ limit meal section width */
+  max-width: 960px;
   padding: 1.8rem;
   border-radius: 20px;
   transition: all 0.3s ease;
@@ -57,12 +51,6 @@
   box-shadow: 0 0 25px rgba(80, 255, 180, 0.15);
 }
 
-.nutrition-card-dark:hover {
-  box-shadow: 0 0 40px rgba(80, 255, 180, 0.25);
-  transform: translateY(-5px);
-}
-
-/* === TITLES === */
 .title-dark {
   font-size: 2rem;
   color: #80ffb4;
@@ -76,7 +64,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* === GOAL BUTTONS === */
 .goal-buttons-dark {
   display: flex;
   justify-content: center;
@@ -107,7 +94,6 @@
   color: #000;
 }
 
-/* === TEXTAREA === */
 .preferences-dark {
   width: 100%;
   background: rgba(30, 30, 30, 0.7);
@@ -127,7 +113,6 @@
   border-color: #80ffb4;
 }
 
-/* === MAIN BUTTON === */
 .generate-btn-dark {
   background: linear-gradient(135deg, #00e676, #00c853);
   color: #0d0d0d;
@@ -144,19 +129,16 @@
   box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
 }
 
-/* === MEAL PLAN GRID === */
-/* === MEAL PLAN (vertical stacked layout) === */
 .meal-plan-dark {
   margin-top: 3rem;
   width: 100%;
   display: flex;
-  flex-direction: column; /* ✅ Stack vertically */
-  align-items: center; /* ✅ Center horizontally */
+  flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
   padding: 0 1rem;
 }
 
-/* === INDIVIDUAL MEAL SECTIONS === */
 .meal-section-dark {
   width: 100%;
   max-width: 960px;
@@ -170,7 +152,6 @@
   box-shadow: 0 0 25px rgba(80, 255, 180, 0.15);
 }
 
-/* Optional: enhance readability */
 .meal-section-dark h3 {
   color: red;
   margin-bottom: 0.8rem;
@@ -179,7 +160,6 @@
   padding-bottom: 0.3rem;
 }
 
-/* === MEAL CARDS === */
 .meal-card-dark {
   text-align: left;
   color: #d1ffd8;
@@ -198,4 +178,9 @@
 
 .meal-card-dark strong {
   color: #00e676;
+}
+@media (max-width: 960px) {
+  .nutrition-card-dark {
+    margin-top: 100px !important;
+  }
 }
