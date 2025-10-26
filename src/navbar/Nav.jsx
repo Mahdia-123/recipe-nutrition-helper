@@ -9,7 +9,7 @@ export default function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark ">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <img src="/images/beefburgur.jpg" alt="Logo" />
+          <img src="/images/logo3.png" alt="Logo" />
         </Link>
 
         <button
@@ -20,7 +20,6 @@ export default function Nav() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navbar links */}
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">

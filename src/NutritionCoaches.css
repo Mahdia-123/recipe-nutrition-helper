@@ -1,0 +1,67 @@
+.coaches-container {
+  padding: 32px;
+  font-family: Arial, sans-serif;
+}
+.coaches-container h1 {
+  color: red;
+  text-align: center;
+  font-family: "Sofia", cursive;
+  font-weight: bold;
+  text-shadow: 0 0 30px rgba(80, 255, 180, 0.4);
+}
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.coach-card {
+  background-color: rgba(25, 25, 25, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(80, 255, 180, 0.2);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.coach-card:hover {
+  transform: translateY(-5px);
+}
+
+.coach-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.coach-card h2 {
+  margin-bottom: 10px;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Sofia", cursive;
+}
+.coach-card p strong {
+  color: #00c853;
+}
+
+.coach-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #80ffb4;
+}
+
+.coach-card a {
+  color: red;
+  text-decoration: none;
+}
+.coach-card {
+  text-decoration: none !important;
+}
+.coach-card a:hover {
+  text-decoration: underline;
+  color: #80ffb4;
+}

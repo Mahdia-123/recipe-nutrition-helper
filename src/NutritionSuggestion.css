@@ -110,6 +110,7 @@
   margin-bottom: 1.2rem;
   outline: none;
   transition: border-color 0.3s ease;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .preferences-dark:focus {

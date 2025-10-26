@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./RecipeHelper.css";
 import MealOfTheDay from "./MealOfTheDay";
+import Coaches from "./NutritionCoaches";
 import Nav from "./navbar/Nav";
 import popularFoodData from "./components/popularfoods";
 import { Link } from "react-router-dom";
@@ -40,10 +41,13 @@ export default function RecipeHelper() {
           Add Recipe
         </Link>
       </header>
+      <section className="couaches">
+        <Coaches />
+      </section>
+
       <section className="about-nutrition mt-5 fluid">
         <h1 className="nutritionHead">About Our Website</h1>
         <div className="aboutNutrition">
-          {" "}
           <p>
             The Recipe & Nutrition Helper is your go-to web app for discovering
             delicious meals and tracking essential nutritional information.
@@ -58,62 +62,66 @@ export default function RecipeHelper() {
           </p>
         </div>
       </section>
+
+      {/* POPULAR FOODS SECTION */}
       <section className="popular-foods">
         <h1 className="mt-5">Popular Foods</h1>
         <div className="popular-foods-container">
           <div className="food-container grid-4-columns">
             {popularFood.map((food) => (
               <div className="card" key={food.id}>
-                <img src={food.img} alt={food.title} />
-                <div className="card-body">
+                {/* Link to detail page */}
+                <Link to={`/food/${food.id}`} className="card-link">
+                  <img src={food.img} alt={food.title} />
                   <h2 style={{ color: "red", fontWeight: "bold" }}>
                     {food.title}
                   </h2>
-                  <p>{food.PreparetionTime}</p>
+                </Link>
 
+                {/* Preparation Time */}
+                {food.PreparetionTime.map((time, i) => (
+                  <p key={`${food.id}-prep-${i}`}>{time}</p>
+                ))}
+
+                {/* Toggle ingredients */}
+                <button
+                  className="toggle-btn"
+                  onClick={() => toggleCard(food.id)}
+                >
+                  {openCard === food.id ? "▲ Hide Details" : "▼ Show Details"}
+                </button>
+
+                {openCard === food.id && (
+                  <div className="details">
+                    <ul>
+                      {food.ingredients.map((item, i) => (
+                        <li key={`${food.id}-ing-${i}`}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Like & Rating */}
+                <div className="interaction-buttons">
                   <button
-                    className="toggle-btn"
-                    onClick={() => toggleCard(food.id)}
+                    className={`like-btn ${food.liked ? "liked" : ""}`}
+                    onClick={() => handleLike(food.id)}
                   >
-                    {openCard === food.id ? "▲ Hide Details" : "▼ Show Details"}
+                    {food.liked ? "Liked ❤️" : "Like ❤️"}
                   </button>
 
-                  {openCard === food.id && (
-                    <div className="details">
-                      <ul>
-                        {typeof food.ingredients === "string" ? (
-                          food.ingredients
-                            .split(",")
-                            .map((item, i) => <li key={i}>{item.trim()}</li>)
-                        ) : (
-                          <li>{food.ingredients}</li>
-                        )}
-                      </ul>
-                    </div>
-                  )}
-
-                  <div className="interaction-buttons">
-                    {/* Like Button */}
-                    <button
-                      className={`like-btn ${food.liked ? "liked" : ""}`}
-                      onClick={() => handleLike(food.id)}
-                    >
-                      {food.liked ? "Liked ❤️" : "Like ❤️"}
-                    </button>
-
-                    <div className="star-rating">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <span
-                          key={star}
-                          className={
-                            food.rating >= star ? "filled-star" : "empty-star"
-                          }
-                          onClick={() => handleRating(food.id, star)}
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
+                  <div className="star-rating">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <span
+                        key={star}
+                        className={
+                          food.rating >= star ? "filled-star" : "empty-star"
+                        }
+                        onClick={() => handleRating(food.id, star)}
+                      >
+                        ★
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -122,9 +130,12 @@ export default function RecipeHelper() {
         </div>
       </section>
 
+      {/* MEAL OF THE DAY */}
       <section>
         <MealOfTheDay />
       </section>
+
+      {/* FOOTER */}
       <section className="footer">
         <Footer />
       </section>

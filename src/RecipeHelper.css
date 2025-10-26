@@ -112,7 +112,7 @@ header p {
   color: red;
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+
   text-align: center;
   font-family: "Sofia", cursive;
   text-shadow: 0 0 30px rgba(80, 255, 180, 0.4);
@@ -153,8 +153,12 @@ header p {
   padding: 8px;
   border-top: 1px solid #eee;
   font-size: 14px;
-  color: #80ffb4;
+  color: #80ffb4 !important;
   animation: fadeIn 0.3s ease-in-out;
+}
+.details li {
+  color: #80ffb4 !important;
+  font-family: "Times New Roman", Times, serif !important;
 }
 .like-btn {
   background: none !important;
@@ -178,7 +182,7 @@ header p {
 
 .star-rating span {
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 18px;
 }
 
 .filled-star {
@@ -195,7 +199,9 @@ header p {
   margin-top: 10px;
   gap: 10px;
 }
-
+.card-link {
+  text-decoration: none;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;

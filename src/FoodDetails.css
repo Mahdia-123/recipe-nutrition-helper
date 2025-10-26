@@ -1,0 +1,72 @@
+.food-detail {
+  padding: 0;
+}
+
+.food-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 2rem auto;
+  align-items: flex-start;
+  background-color: rgba(25, 25, 25, 0.6);
+  padding: 10px;
+  box-shadow: 0 0 30px rgba(80, 255, 180, 0.2);
+  border-radius: 4px;
+}
+
+.food-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.food-info h1 {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Sofia", cursive;
+}
+.food-info h3 {
+  color: red;
+  font-family: "Sofia", cursive;
+}
+.food-info p strong {
+  color: red;
+  font-size: bold !important;
+  font-family: "Sofia", cursive;
+  font-size: 16px !important;
+}
+.food-info p {
+  color: #80ffb4;
+}
+.food-info ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  color: #80ffb4;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background-color: none;
+  color: #80ffb4;
+  text-decoration: none;
+  border: red 1px solid;
+  border-radius: 10px;
+  font-weight: 600;
+  font-family: "Sofia", cursive;
+  transition: all 300ms ease-in-out;
+}
+
+.back-btn:hover {
+  border: #80ffb4 1px solid;
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .food-detail-container {
+    grid-template-columns: 1fr;
+  }
+}

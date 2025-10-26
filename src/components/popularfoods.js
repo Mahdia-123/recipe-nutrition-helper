@@ -1,8 +1,8 @@
-const popularFood = [
+const popularFoodData = [
   {
     id: "1",
     title: "BLT Chicken Salad",
-    img: "images/chicken-salad.jpg",
+    img: "/images/chicken-salad.jpg",
     PreparetionTime: [
       "💼 Prep Time: 20 mins | 🥙 Cook Time: 30 mins ",
       "🍗 Servings: 2 | 🔥 Calories: ~400 per serving",
@@ -20,7 +20,7 @@ const popularFood = [
   {
     id: "2",
     title: "Spicy Chicken Wraps",
-    img: "images/spicy-chicken-wrap.jpg",
+    img: "/images/spicy-chicken-wrap.jpg",
     PreparetionTime: [
       "💼 Prep Time: 15 mins | 🌯 Cook Time: 30 mins ",
       "🍗 Servings: 4 | 🔥 Calories: ~350 per serving",
@@ -36,7 +36,7 @@ const popularFood = [
   {
     id: "3",
     title: "Crispy French Fries",
-    img: "images/french fries.jpg",
+    img: "/images/french fries.jpg",
     PreparetionTime: [
       "💼 Prep Time: 15 mins | 🍟 Cook Time: 30 mins ",
       "🍗 Servings: 2 | 🔥 Calories: ~500 per serving",
@@ -54,7 +54,7 @@ const popularFood = [
   {
     id: "4",
     title: "Pizza Burgers",
-    img: "images/pizza burger.jpg",
+    img: "/images/pizza burger.jpg",
     PreparetionTime: [
       "💼 Prep Time: 35 mins | 🍔 Cook Time: 30 mins ",
       "🍗 Servings: 1| 🔥 Calories: ~400 per serving",
@@ -74,7 +74,7 @@ const popularFood = [
   {
     id: "5",
     title: "Grilled Salmon",
-    img: "images/grilledsalmon.jpg",
+    img: "/images/grilledsalmon.jpg",
     PreparetionTime: [
       "💼 Prep Time: 10 mins | 🍱 Cook Time: 15 mins",
       "🐟 Servings: 2 | 🔥 Calories: ~420 per serving",
@@ -91,7 +91,7 @@ const popularFood = [
   {
     id: "6",
     title: "Spaghetti Carbonara",
-    img: "images/carabona.jpg",
+    img: "/images/carabona.jpg",
     PreparetionTime: [
       "💼 Prep Time: 20 mins | 🍝 Cook Time: 15 mins",
       "🍽️ Servings: 3 | 🔥 Calories: ~500 per serving",
@@ -107,9 +107,9 @@ const popularFood = [
     ],
   },
   {
-    id: "6",
+    id: "7",
     title: "Beef Tacos",
-    img: "images/tacos.jpg",
+    img: "/images/tacos.jpg",
     PreparetionTime: [
       "💼 Prep Time: 20 mins | 🌮 Cook Time: 10 mins",
       "🍖 Servings: 4 | 🔥 Calories: ~380 per serving",
@@ -127,7 +127,7 @@ const popularFood = [
   {
     id: "8",
     title: "Vegetable Stir Fry",
-    img: "images/stir-fry.jpg",
+    img: "/images/stir-fry.jpg",
     PreparetionTime: [
       "💼 Prep Time: 15 mins | 🍲 Cook Time: 10 mins",
       "🥦 Servings: 2 | 🔥 Calories: ~300 per serving",
@@ -143,4 +143,4 @@ const popularFood = [
     ],
   },
 ];
-export default popularFood;
+export default popularFoodData;
